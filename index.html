@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude x LinkedIn Masterclass &mdash; Join the Waitlist</title>
+  <meta name="description" content="Alec Kremins generated 5.2M LinkedIn impressions using Claude Code instead of a $2,500/mo content strategist. He's teaching the exact system. Join the waitlist.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ---- BRAND TOKENS (RallyUp) ---- */
+    :root {
+      --bg:           #09090b;
+      --surface:      #18181b;
+      --surface2:     #27272a;
+      --border:       #3f3f46;
+      --text:         #fafafa;
+      --text2:        #a1a1aa;
+      --text3:        #71717a;
+      --accent:       #5B6FFF;
+      --accent-glow:  rgba(91, 111, 255, 0.18);
+      --accent-dim:   rgba(91, 111, 255, 0.06);
+      --lime:         #D8EC6A;
+      --lime-dim:     rgba(216, 236, 106, 0.08);
+      --lime-border:  rgba(216, 236, 106, 0.22);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* subtle dot grid */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 860px; margin: 0 auto;
+      padding: 0 28px; position: relative; z-index: 1;
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0; position: relative; z-index: 10;
+      background: rgba(9,9,11,0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: sticky; top: 0;
+    }
+    .nav-inner {
+      max-width: 860px; margin: 0 auto;
+      padding: 0 28px; display: flex;
+      align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700; font-size: 17px;
+      color: var(--text); text-decoration: none; letter-spacing: -0.02em;
+    }
+    .logo span { color: var(--lime); }
+    .nav-pill {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 5px 14px;
+      font-size: 11px; font-family: 'DM Mono', monospace;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--text3);
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      padding: 96px 0 88px; text-align: center;
+      position: relative; z-index: 1; overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute; top: -40px; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 500px;
+      background: radial-gradient(ellipse at center top,
+        rgba(91,111,255,0.12) 0%,
+        rgba(216,236,106,0.04) 40%,
+        transparent 70%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 6px 16px 6px 10px;
+      font-size: 11px; font-family: 'DM Mono', monospace;
+      color: var(--text2); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 40px;
+    }
+    .badge-dot {
+      width: 7px; height: 7px; background: var(--lime);
+      border-radius: 50%; flex-shrink: 0;
+      box-shadow: 0 0 8px var(--lime);
+      animation: blink 2.4s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--lime); }
+      50% { opacity: 0.35; box-shadow: none; }
+    }
+
+    .hero h1 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: clamp(38px, 6.8vw, 74px);
+      font-weight: 800; line-height: 1.06;
+      letter-spacing: -0.035em; margin-bottom: 28px;
+      max-width: 840px; margin-left: auto; margin-right: auto;
+    }
+    .hero h1 .lime  { color: var(--lime); }
+    .hero h1 .muted { color: var(--text2); }
+
+    .hero-sub {
+      font-size: 17px; color: var(--text2);
+      max-width: 560px; margin: 0 auto 52px; line-height: 1.72;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 500; }
+
+    /* ---- FORM ---- */
+    .form-wrap { max-width: 500px; margin: 0 auto; }
+    .form-stack { display: flex; flex-direction: column; gap: 10px; }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .form-input, .form-select {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 13px 16px;
+      color: var(--text); font-family: 'DM Sans', sans-serif;
+      font-size: 15px; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%; -webkit-appearance: none;
+    }
+    .form-input::placeholder { color: var(--text3); }
+    .form-input:focus, .form-select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .form-input.error  { border-color: #ef4444; box-shadow: 0 0 0 3px rgba(239,68,68,0.15); }
+    .form-select       { color: var(--text3); cursor: pointer; }
+    .form-select.chosen { color: var(--text); }
+    .form-select option { background: #18181b; color: var(--text); }
+
+    .btn-submit {
+      background: var(--lime); color: #09090b;
+      border: none; border-radius: 10px; padding: 14px 28px;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 16px; font-weight: 700; cursor: pointer;
+      letter-spacing: -0.01em; width: 100%;
+      transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-submit:hover  { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 10px 28px rgba(216,236,106,0.22); }
+    .btn-submit:active { transform: none; box-shadow: none; }
+    .btn-submit:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
+
+    .form-note { font-size: 12px; color: var(--text3); text-align: center; margin-top: 12px; }
+
+    .form-success {
+      display: none; background: var(--lime-dim);
+      border: 1px solid var(--lime-border);
+      border-radius: 14px; padding: 32px 28px; text-align: center;
+    }
+    .form-success.show { display: block; }
+    .check-circle {
+      width: 44px; height: 44px; background: var(--lime);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 16px;
+      font-size: 20px; color: #09090b; font-weight: 700;
+    }
+    .form-success h3 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 21px; font-weight: 700; color: var(--lime);
+      margin-bottom: 8px; letter-spacing: -0.02em;
+    }
+    .form-success p { font-size: 14px; color: var(--text2); }
+
+    /* ---- PROOF BAR ---- */
+    .proof-bar {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 0; position: relative; z-index: 1;
+    }
+    .proof-bar::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg,
+        rgba(91,111,255,0.05) 0%,
+        transparent 40%,
+        rgba(216,236,106,0.04) 100%);
+      pointer-events: none;
+    }
+    .proof-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      max-width: 860px; margin: 0 auto; padding: 0 28px;
+    }
+    .proof-item {
+      text-align: center; padding: 0 12px;
+      border-right: 1px solid var(--border);
+    }
+    .proof-item:last-child { border-right: none; }
+    .proof-num {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: clamp(22px, 3.5vw, 38px); font-weight: 800;
+      color: var(--lime); line-height: 1;
+      letter-spacing: -0.03em; margin-bottom: 7px;
+    }
+    .proof-label { font-size: 12px; color: var(--text3); line-height: 1.45; }
+
+    /* ---- SECTIONS ---- */
+    section { padding: 92px 0; position: relative; z-index: 1; }
+    section + section,
+    .proof-bar + section { border-top: 1px solid var(--border); }
+
+    .section-label {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text3); margin-bottom: 14px;
+    }
+    .section-label.accent { color: var(--accent); }
+    .section-label.lime   { color: var(--lime); }
+
+    h2 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: clamp(28px, 4.2vw, 48px); font-weight: 800;
+      line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 16px;
+    }
+    h2 .lime { color: var(--lime); }
+    .section-sub { font-size: 16px; color: var(--text2); max-width: 520px; line-height: 1.7; }
+
+    /* ---- PROBLEM ---- */
+    .problem-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 14px; margin-top: 52px;
+    }
+    .problem-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 24px;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .problem-card:hover { border-color: #52525b; }
+    .problem-num {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      color: var(--text3); letter-spacing: 0.1em; margin-bottom: 14px;
+    }
+    .problem-card h3 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 17px; font-weight: 700;
+      letter-spacing: -0.02em; margin-bottom: 10px; line-height: 1.3;
+    }
+    .problem-card p { font-size: 14px; color: var(--text2); line-height: 1.65; }
+
+    /* ---- STORY ---- */
+    .story-body {
+      display: grid; grid-template-columns: 1fr 420px;
+      gap: 56px; align-items: start; margin-top: 52px;
+    }
+    .story-text p { color: var(--text2); font-size: 16px; line-height: 1.75; margin-bottom: 18px; }
+    .story-text p strong { color: var(--text); font-weight: 500; }
+    .pull-quote {
+      border-left: 3px solid var(--lime);
+      padding: 4px 0 4px 20px; margin: 26px 0;
+    }
+    .pull-quote p {
+      font-size: 17px !important; font-style: italic;
+      color: var(--text) !important; line-height: 1.55 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* LinkedIn mockups */
+    .li-cards { display: flex; flex-direction: column; gap: 14px; }
+    .li-card {
+      background: #fff; border-radius: 12px;
+      padding: 18px 18px 14px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .li-top { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 14px; }
+    .li-av {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, #8b9fff 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 13px; color: white;
+      flex-shrink: 0; font-family: 'DM Sans', sans-serif;
+    }
+    .li-name-row { font-weight: 700; font-size: 14px; color: #1d2226; }
+    .li-in-badge { color: #0a66c2; font-size: 12px; font-weight: 400; }
+    .li-sub-row  { font-size: 12px; color: #666; margin-top: 1px; }
+    .li-time-row { font-size: 12px; color: #999; margin-top: 1px; }
+    .li-body     { font-size: 14px; color: #1d2226; line-height: 1.5; margin-bottom: 12px; }
+    .li-foot {
+      display: flex; gap: 14px; padding-top: 10px;
+      border-top: 1px solid #e8e8e8;
+      font-size: 12px; font-weight: 600; color: #0a66c2;
+    }
+    .li-foot .muted { color: #666; font-weight: 400; }
+
+    /* ---- ANALYTICS ---- */
+    .chart-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px 32px 24px; margin-top: 52px;
+    }
+    .chart-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 28px;
+    }
+    .chart-big {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 44px; font-weight: 800;
+      color: var(--text); letter-spacing: -0.04em; line-height: 1;
+    }
+    .chart-sub { font-size: 13px; color: var(--text2); margin-top: 5px; }
+    .chart-growth {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.2);
+      border-radius: 100px; padding: 6px 14px;
+      font-family: 'DM Mono', monospace; font-size: 13px;
+      color: #4ade80; align-self: flex-start;
+    }
+    .chart-svg { width: 100%; height: 130px; display: block; }
+    .chart-x {
+      display: flex; justify-content: space-between; margin-top: 8px;
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      color: var(--text3); letter-spacing: 0.04em;
+    }
+    .top-posts {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 14px; margin-top: 20px;
+    }
+    .post-stat-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px; transition: border-color 0.2s;
+    }
+    .post-stat-card:hover { border-color: #52525b; }
+    .post-stat-num {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 28px; font-weight: 800; color: var(--lime);
+      letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px;
+    }
+    .post-stat-meta {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      color: var(--text3); letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 12px;
+    }
+    .post-stat-text { font-size: 13px; color: var(--text2); font-style: italic; line-height: 1.5; }
+
+    /* ---- CURRICULUM ---- */
+    .modules {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 14px; margin-top: 52px;
+    }
+    .module-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 24px;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .module-card:hover { border-color: var(--accent); background: var(--accent-dim); }
+    .module-tag {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px;
+    }
+    .module-card h3 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 18px; font-weight: 700;
+      letter-spacing: -0.02em; margin-bottom: 10px; line-height: 1.3;
+    }
+    .module-card p { font-size: 14px; color: var(--text2); line-height: 1.65; }
+
+    .bonus-strip {
+      background: var(--lime-dim); border: 1px solid var(--lime-border);
+      border-radius: 14px; padding: 24px 28px;
+      margin-top: 14px; display: flex; align-items: flex-start; gap: 18px;
+    }
+    .bonus-icon {
+      width: 40px; height: 40px; background: var(--lime);
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; font-size: 18px; color: #09090b; flex-shrink: 0;
+    }
+    .bonus-strip h3 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 17px; font-weight: 700;
+      color: var(--lime); letter-spacing: -0.02em; margin-bottom: 5px;
+    }
+    .bonus-strip p { font-size: 14px; color: var(--text2); line-height: 1.65; }
+
+    /* ---- BOTTOM CTA ---- */
+    .bottom-cta { text-align: center; }
+    .bottom-cta h2      { max-width: 600px; margin: 0 auto 16px; }
+    .bottom-cta .section-sub { max-width: 480px; margin: 0 auto 44px; }
+
+    /* ---- FOOTER ---- */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px; text-align: center; position: relative; z-index: 1;
+    }
+    footer p { font-size: 13px; color: var(--text3); }
+    footer a { color: var(--text2); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+
+    /* ---- REVEAL ANIMATION ---- */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.d1 { transition-delay: 0.10s; }
+    .reveal.d2 { transition-delay: 0.20s; }
+    .reveal.d3 { transition-delay: 0.30s; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 700px) {
+      .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 20px 0; }
+      .proof-item { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+      .proof-item:nth-child(3), .proof-item:nth-child(4) { border-bottom: none; }
+      .problem-grid, .modules, .top-posts { grid-template-columns: 1fr; }
+      .story-body { grid-template-columns: 1fr; gap: 32px; }
+      .li-cards { display: none; }
+      .form-row-2 { grid-template-columns: 1fr; }
+      .chart-big { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">Rally<span>Up</span></a>
+    <span class="nav-pill">Claude x LinkedIn Masterclass</span>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Waitlist now open
+    </div>
+
+    <h1>
+      5.2M LinkedIn impressions.<br>
+      <span class="muted">No agency. No ghostwriter.</span><br>
+      <span class="lime">Just Claude.</span>
+    </h1>
+
+    <p class="hero-sub">
+      Alec Kremins replaced a <strong>$2,500/mo content strategist</strong> with four Claude skills he built himself. In 12 months his LinkedIn went from near-zero to <strong>5.2M impressions</strong> and still runs on near-autopilot. He is turning the exact system into a masterclass.
+    </p>
+
+    <div class="form-wrap">
+      <div id="form-hero" class="form-stack">
+        <div class="form-row-2">
+          <select class="form-select" id="role-hero" onchange="this.classList.add('chosen')">
+            <option value="">Your role</option>
+            <option>Founder / CEO</option>
+            <option>C-Suite Executive</option>
+            <option>VP / Director</option>
+            <option>Sales Leader</option>
+            <option>Marketing Leader</option>
+            <option>Consultant / Advisor</option>
+            <option>Other</option>
+          </select>
+          <input type="email" class="form-input" id="email-hero" placeholder="your@email.com">
+        </div>
+        <button class="btn-submit" id="btn-hero" onclick="handleSubmit('hero')">
+          Join the Waitlist &#8594;
+        </button>
+      </div>
+      <div id="success-hero" class="form-success">
+        <div class="check-circle">&#10003;</div>
+        <h3>You're on the list.</h3>
+        <p>We'll reach out as soon as the masterclass goes live.</p>
+      </div>
+      <p class="form-note">No spam. You'll only hear from us when the masterclass launches.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROOF BAR ===================== -->
+<div class="proof-bar">
+  <div class="proof-grid">
+    <div class="proof-item">
+      <div class="proof-num">5.2M</div>
+      <div class="proof-label">Impressions<br>in 12 months</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">+458%</div>
+      <div class="proof-label">Year-over-year<br>growth</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">539K</div>
+      <div class="proof-label">Impressions on<br>a single post</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">2,713</div>
+      <div class="proof-label">Comments on<br>one post</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PROBLEM ===================== -->
+<section>
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">The problem</div>
+      <h2>You're posting.<br><span class="lime">Nobody's watching.</span></h2>
+      <p class="section-sub">Most people on LinkedIn are stuck in the same loop. Here's what's actually going wrong.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card reveal d1">
+        <div class="problem-num">01</div>
+        <h3>You're consistent for two weeks, then you stop</h3>
+        <p>Posting without a system means running on willpower. You run out of ideas, life gets busy, and LinkedIn becomes one more thing you feel guilty about not doing.</p>
+      </div>
+      <div class="problem-card reveal d2">
+        <div class="problem-num">02</div>
+        <h3>You've tried AI but it doesn't sound like you</h3>
+        <p>Generic AI content gets buried. Algorithms and your audience can both tell when something is templated. You need content built on your actual voice and real experiences.</p>
+      </div>
+      <div class="problem-card reveal d3">
+        <div class="problem-num">03</div>
+        <h3>You know LinkedIn matters but can't justify the time</h3>
+        <p>Hiring a ghostwriter costs $2,500 or more per month and still requires hours of your input each week. There has to be a smarter way to build a presence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STORY ===================== -->
+<section>
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label lime">Alec's story</div>
+      <h2>He spent $1,000 learning Claude.<br>Then built a machine.</h2>
+    </div>
+    <div class="story-body">
+      <div class="story-text reveal">
+        <p>Alec Kremins is the founder of RallyUp, a managed LinkedIn service for B2B executives. He knew LinkedIn was the channel. He just couldn't stay consistent enough to see results.</p>
+        <p>In early 2025, he invested $1,000 in a Claude masterclass. Instead of using it for generic tasks, he went deeper. He built <strong>custom Claude skills</strong> that captured his exact voice, pulled ideas from his real experiences, and turned a short weekly input session into a full content pipeline.</p>
+        <div class="pull-quote">
+          <p>"4 skills I built in Claude replaced the work of a $2,500 content strategist. I'm giving it all away for free."</p>
+        </div>
+        <p>The result: <strong>5,288,966 impressions in 12 months.</strong> A 458% increase year-over-year. Three posts over 200K impressions. All content that still sounds exactly like him.</p>
+        <p>He's now teaching the full system, step by step.</p>
+      </div>
+      <div class="li-cards reveal d2">
+        <div class="li-card">
+          <div class="li-top">
+            <div class="li-av">AK</div>
+            <div>
+              <div class="li-name-row">Alec Kremins <span class="li-in-badge">in</span></div>
+              <div class="li-sub-row">building the future of EGC (employee generated content)</div>
+              <div class="li-time-row">1mo &#183; &#127760;</div>
+            </div>
+          </div>
+          <div class="li-body">
+            i spent $1,000 on a claude masterclass and am giving you what i learned for free.
+          </div>
+          <div class="li-foot">
+            <span>2,713 comments</span>
+            <span class="muted">12 reposts</span>
+          </div>
+        </div>
+        <div class="li-card">
+          <div class="li-top">
+            <div class="li-av">AK</div>
+            <div>
+              <div class="li-name-row">Alec Kremins <span class="li-in-badge">in</span></div>
+              <div class="li-sub-row">building the future of EGC (employee generated content)</div>
+              <div class="li-time-row">3w &#183; &#127760;</div>
+            </div>
+          </div>
+          <div class="li-body">
+            4 skills i built in claude replaced the work of a $2500 content strategist and i'm giving it all away for free....
+          </div>
+          <div class="li-foot">
+            <span>300 comments</span>
+            <span class="muted">1 repost</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ANALYTICS ===================== -->
+<section>
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">The numbers</div>
+      <h2>The growth chart speaks<br><span class="lime">for itself.</span></h2>
+      <p class="section-sub">April 2025 to April 2026. One account. One system. Built in Claude.</p>
+    </div>
+
+    <div class="chart-card reveal d1">
+      <div class="chart-top">
+        <div>
+          <div class="chart-big">5,288,966</div>
+          <div class="chart-sub">Impressions &#183; Apr 10, 2025 to Apr 9, 2026</div>
+        </div>
+        <div class="chart-growth">&#9650;&#160;458.2% vs. prior 365 days</div>
+      </div>
+      <svg class="chart-svg" viewBox="0 0 800 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#5B6FFF" stop-opacity="0.28"/>
+            <stop offset="100%" stop-color="#5B6FFF" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="43" x2="800" y2="43" stroke="#3f3f46" stroke-width="1" stroke-dasharray="3,5"/>
+        <line x1="0" y1="86" x2="800" y2="86" stroke="#3f3f46" stroke-width="1" stroke-dasharray="3,5"/>
+        <text x="6" y="40"  fill="#71717a" font-size="10" font-family="DM Mono,monospace">4M</text>
+        <text x="6" y="83"  fill="#71717a" font-size="10" font-family="DM Mono,monospace">2M</text>
+        <path d="M 0 126 L 0 122 C 40 121,75 118,100 108 C 118 100,130 72,158 52 C 185 34,230 24,290 19 C 360 13,430 10,510 7 C 610 4,700 3,800 2 L 800 126 Z" fill="url(#chartGrad)"/>
+        <path d="M 0 122 C 40 121,75 118,100 108 C 118 100,130 72,158 52 C 185 34,230 24,290 19 C 360 13,430 10,510 7 C 610 4,700 3,800 2" fill="none" stroke="#5B6FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="chart-x">
+        <span>Apr '25</span><span>Jun</span><span>Aug</span>
+        <span>Oct</span><span>Dec</span><span>Feb '26</span><span>Apr '26</span>
+      </div>
+    </div>
+
+    <div class="top-posts">
+      <div class="post-stat-card reveal d1">
+        <div class="post-stat-num">539,581</div>
+        <div class="post-stat-meta">impressions &#183; 537 reposts</div>
+        <div class="post-stat-text">"looks like we officially found the single greatest use case of ai..."</div>
+      </div>
+      <div class="post-stat-card reveal d2">
+        <div class="post-stat-num">215,920</div>
+        <div class="post-stat-meta">impressions &#183; 24 comments</div>
+        <div class="post-stat-text">"who else watches shark tank, sees a product and thinks there's no way that'll make money?"</div>
+      </div>
+      <div class="post-stat-card reveal d3">
+        <div class="post-stat-num">202,472</div>
+        <div class="post-stat-meta">impressions &#183; 224 comments</div>
+        <div class="post-stat-text">"less than an hour ago, i was fired from my role at beehiiv. and to be honest... i'm relieved."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CURRICULUM ===================== -->
+<section>
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label accent">What's inside</div>
+      <h2>The exact playbook.<br><span class="lime">Nothing held back.</span></h2>
+      <p class="section-sub">No theory. No generic prompts. This is the actual workflow Alec uses every week to run his LinkedIn on near-autopilot.</p>
+    </div>
+    <div class="modules">
+      <div class="module-card reveal d1">
+        <div class="module-tag">Module 01</div>
+        <h3>Build your LinkedIn voice skill in Claude</h3>
+        <p>How to train Claude on your writing style, tone, and real experiences so every piece of content sounds like you, not like a language model.</p>
+      </div>
+      <div class="module-card reveal d2">
+        <div class="module-tag">Module 02</div>
+        <h3>The 4-skill pipeline that replaced a $2,500/mo strategist</h3>
+        <p>The exact skill stack Alec built. From idea capture to polished post in minutes per week, with zero ongoing agency cost.</p>
+      </div>
+      <div class="module-card reveal d1">
+        <div class="module-tag">Module 03</div>
+        <h3>Claude Code setup for non-developers</h3>
+        <p>A step-by-step walkthrough of setting up Claude Code even if you have never written a line of code. This is where the real leverage lives.</p>
+      </div>
+      <div class="module-card reveal d2">
+        <div class="module-tag">Module 04</div>
+        <h3>The content strategy that compounds over time</h3>
+        <p>Why consistency alone isn't enough, and how to engineer posts that build momentum using the exact formats that drove 539K impressions on a single post.</p>
+      </div>
+    </div>
+    <div class="bonus-strip reveal">
+      <div class="bonus-icon">&#9889;</div>
+      <div>
+        <h3>Bonus: Alec's actual Claude skill files</h3>
+        <p>You get the exact Claude skills Alec runs in production. The same four that replaced his $2,500/mo content strategist. Download them and start using on day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BOTTOM CTA ===================== -->
+<section class="bottom-cta">
+  <div class="container">
+    <div class="reveal">
+      <div class="badge" style="margin-bottom: 32px;">
+        <span class="badge-dot"></span>
+        Waitlist now open
+      </div>
+      <h2>Stop posting into the void.<br><span class="lime">Get the system.</span></h2>
+      <p class="section-sub">Join the waitlist and be first to know when the masterclass goes live. Two fields. Ten seconds.</p>
+    </div>
+    <div class="form-wrap reveal d1">
+      <div id="form-bottom" class="form-stack">
+        <div class="form-row-2">
+          <select class="form-select" id="role-bottom" onchange="this.classList.add('chosen')">
+            <option value="">Your role</option>
+            <option>Founder / CEO</option>
+            <option>C-Suite Executive</option>
+            <option>VP / Director</option>
+            <option>Sales Leader</option>
+            <option>Marketing Leader</option>
+            <option>Consultant / Advisor</option>
+            <option>Other</option>
+          </select>
+          <input type="email" class="form-input" id="email-bottom" placeholder="your@email.com">
+        </div>
+        <button class="btn-submit" id="btn-bottom" onclick="handleSubmit('bottom')">
+          Join the Waitlist &#8594;
+        </button>
+      </div>
+      <div id="success-bottom" class="form-success">
+        <div class="check-circle">&#10003;</div>
+        <h3>You're on the list.</h3>
+        <p>We'll reach out as soon as the masterclass goes live.</p>
+      </div>
+      <p class="form-note">No spam. You'll only hear from us when the masterclass launches.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <p>Built by <a href="https://rallyup.team" target="_blank">RallyUp</a> &#183; The managed LinkedIn service for B2B executives</p>
+</footer>
+
+<script>
+  // ---- REPLACE THIS with your deployed Apps Script Web App URL ----
+  const SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    }),
+    { threshold: 0.08, rootMargin: '0px 0px -32px 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Form submit
+  async function handleSubmit(v) {
+    const emailEl = document.getElementById('email-' + v);
+    const roleEl  = document.getElementById('role-' + v);
+    const btnEl   = document.getElementById('btn-' + v);
+    const formEl  = document.getElementById('form-' + v);
+    const succEl  = document.getElementById('success-' + v);
+
+    const email = emailEl.value.trim();
+    const role  = roleEl.value || 'Not specified';
+
+    if (!email || !email.includes('@') || !email.includes('.')) {
+      emailEl.classList.add('error');
+      emailEl.focus();
+      setTimeout(() => emailEl.classList.remove('error'), 2200);
+      return;
+    }
+
+    btnEl.disabled = true;
+    btnEl.textContent = 'Joining...';
+
+    try {
+      // Apps Script requires text/plain + no-cors to avoid preflight CORS issues.
+      // We can't read the response body (opaque), so we show success on completion.
+      await fetch(SCRIPT_URL, {
+        method:  'POST',
+        mode:    'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body:    JSON.stringify({ email, role }),
+      });
+
+      formEl.style.display = 'none';
+      succEl.classList.add('show');
+
+      // Sync the other form too
+      const other  = v === 'hero' ? 'bottom' : 'hero';
+      const oForm  = document.getElementById('form-' + other);
+      const oSucc  = document.getElementById('success-' + other);
+      if (oForm) oForm.style.display = 'none';
+      if (oSucc) oSucc.classList.add('show');
+
+    } catch (err) {
+      btnEl.disabled = false;
+      btnEl.textContent = 'Join the Waitlist \u2192';
+      emailEl.classList.add('error');
+      setTimeout(() => emailEl.classList.remove('error'), 2200);
+    }
+  }
+
+  // Enter key on email fields
+  document.querySelectorAll('.form-input').forEach(input => {
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') handleSubmit(input.id.includes('hero') ? 'hero' : 'bottom');
+    });
+  });
+</script>
+</body>
+</html>
